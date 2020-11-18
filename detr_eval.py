@@ -9,6 +9,7 @@ Original file is located at
 
 # Commented out IPython magic to ensure Python compatibility.
 import math
+import time
 import pickle
 from PIL import Image
 import requests
