@@ -83,8 +83,10 @@ def plot_results(pil_img, prob, boxes):
 
 model = torch.hub.load('facebookresearch/detr', 'detr_resnet50', pretrained=True)
 model.eval();
+start_time = time.time()
+
 im = Image.open('cats.jpg')
-plt.imshow(im)
+#plt.imshow(im)
 
 # mean-std normalize the input image (batch-size: 1)
 img = transform(im).unsqueeze(0)
@@ -98,5 +100,10 @@ keep = probas.max(-1).values > 0.9
 
 # convert boxes from [0; 1] to image scales
 bboxes_scaled = rescale_bboxes(outputs['pred_boxes'][0, keep], im.size)
-plot_results(im, probas[keep], bboxes_scaled)
+#print("--- %s seconds ---" % (time.time() - start_time))
+
+file_name = 'my_file.txt'
+f = open(file_name, 'a+')
+f.write(str(time.time() - start_time)+'\n')
+f.close()
 
