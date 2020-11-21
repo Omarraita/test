@@ -29,8 +29,9 @@ torch.set_grad_enabled(False);
 #Add directory to detr
 #sys.path.append('/content/detr')
 sys.path.append('/eval/test/detr')
-
-from detr.hubconf import detr_resnet50, detr_resnet50_dc5, detr_resnet101, detr_resnet101_dc5
+import detr
+#from detr.hubconf import detr_resnet50, detr_resnet50_dc5, detr_resnet101, detr_resnet101_dc5
+from detr import hubconf
 
 def evaluate_time(models, models_name, img, repeats):
   i=0
