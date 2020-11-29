@@ -60,7 +60,7 @@ def evaluate_time(models, models_name, img, repeats):
     f.write(str(sum(times)/len(times))+'\n')
     i = i+1
   f.close()
-
+%env JOBLIB_TEMP_FOLDER=/tmp
 detr_resnet50 = detr_resnet50(True,91,False)
 detr_resnet50_dc5 = detr_resnet50_dc5(True,91,False)
 detr_resnet101 = detr_resnet101(True,91,False)
