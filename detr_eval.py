@@ -38,11 +38,15 @@ def evaluate_time(models, models_name, img, repeats):
   average_time = 0
   for model_ in models:
     model_.eval()
+    # move the input and model to GPU for speed if available
+    if torch.cuda.is_available():
+      #input_batch = input_batch.to('cuda')
+      model_.to('cuda')
     times = []
     for j in range(repeats):
       #start evaluation
       start_time = time.time()
-      img = transform(im).unsqueeze(0)
+      img = transform(im).unsqueeze(0).to('cuda')
       # propagate through the model
       outputs = model_(img)
       # keep only predictions with 0.7+ confidence
