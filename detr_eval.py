@@ -46,7 +46,9 @@ def evaluate_time(models, models_name, img, repeats):
     for j in range(repeats):
       #start evaluation
       start_time = time.time()
-      img = transform(im).unsqueeze(0).to('cuda')
+      img = transform(im).unsqueeze(0)
+      if torch.cuda.is_available():
+            img.to('cuda')
       # propagate through the model
       outputs = model_(img)
       # keep only predictions with 0.7+ confidence
