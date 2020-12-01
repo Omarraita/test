@@ -73,8 +73,10 @@ transform = T.Compose([
     T.ToTensor(),
     T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 ])
-models = [detr_resnet50,detr_resnet50_dc5,detr_resnet101,detr_resnet101_dc5 ]
-models_name = ['detr_resnet50','detr_resnet50_dc5','detr_resnet101','detr_resnet101_dc5' ]
+#models = [detr_resnet50,detr_resnet50_dc5,detr_resnet101,detr_resnet101_dc5 ]
+#models_name = ['detr_resnet50','detr_resnet50_dc5','detr_resnet101','detr_resnet101_dc5' ]
+models = [detr_resnet50]
+models_name = ['detr_resnet50']
 im = Image.open('cats.jpg')
 repeats = 3
 evaluate_time(models,models_name,im,repeats)
