@@ -64,9 +64,9 @@ def evaluate_time(models, models_name, img, repeats):
   f.close()
 %env JOBLIB_TEMP_FOLDER=/tmp
 detr_resnet50 = detr_resnet50(True,91,False)
-detr_resnet50_dc5 = detr_resnet50_dc5(True,91,False)
-detr_resnet101 = detr_resnet101(True,91,False)
-detr_resnet101_dc5 = detr_resnet101_dc5(True,91,False)
+#detr_resnet50_dc5 = detr_resnet50_dc5(True,91,False)
+#detr_resnet101 = detr_resnet101(True,91,False)
+#detr_resnet101_dc5 = detr_resnet101_dc5(True,91,False)
 
 transform = T.Compose([
     T.Resize(800),
