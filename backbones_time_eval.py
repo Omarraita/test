@@ -13,7 +13,7 @@ from torchvision.models import resnet50,resnet101, resnext50_32x4d
 from PIL import Image
 import time
 
-#!pip install efficientnet_pytorch
+!pip install efficientnet_pytorch
 from efficientnet_pytorch import EfficientNet
 
 bb_resnet50 = resnet50()
